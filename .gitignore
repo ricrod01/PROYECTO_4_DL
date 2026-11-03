@@ -1,0 +1,6 @@
+# No cargar los datos al repositorio
+datos/datos_sinteticos.csv
+
+# Quitando el caché de Python
+__pycache__/
+*.pyc
