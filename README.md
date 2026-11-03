@@ -11,6 +11,24 @@ Actualmente, no se cuenta con ninguna forma de evitar frenar las transacciones f
 
 ## Supuestos
 
+### Modelos
+**Random Forest**:
+
+
+**CNN**:
+
+
+**LSTM**: Los datos están estructurados en un orden definido.
+
+
+
+### Usuario
+
+### Entorno
+**El conjunto de datos**: 100,000 datos, de los cuales 89,936 eran transacciones normales, 3,994 eran de anomalías debido al orden no congruente. 
+3,611 eran de anomalías debido a transacciones cortas (muchas transacciones en poco tiempo) y 2,459 eran anomalías debido a compras en establecimientos no comunes para el cliente.
+
+**Datos de entrenamiento**: las 30 transacciones más recientes de cada cliente. Para cada transacción se contaba con el monto, la fecha y hora y el tipo de establecimiento en el que fue registrada la transacción. 
 
 
 ## Arquitectura del proyecto
