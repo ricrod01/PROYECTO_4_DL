@@ -12,17 +12,34 @@ Actualmente, no se cuenta con ninguna forma de evitar frenar las transacciones f
 ## Supuestos
 
 ### Modelos
-**Random Forest**:
+Para este proyecto se ha usado como base el modelo C del Proyecto 1 del curso de Deep Learning. Este modelo se divide en tres partes:
 
 
-**CNN**:
+**Red CNN-1D:** identifica las anomalías de transacciones cortas.
 
 
-**LSTM**: Los datos están estructurados en un orden definido.
+**Red LSTM:** identifica las anomalías en el orden de los montos de las transacciones.
+
+
+**Random Forest:** identifica las anomalías por tipo de negocio.
+
 
 
 
 ### Usuario
+El sistema antifraude del Banco está construido sobre variables agregadas por ventana de tiempo: 
+
+  -Monto promedio de las últimas 24 horas. 
+
+  
+  -Número de transacciones por hora.
+
+  
+  -Monto máximo del día.
+
+  
+  -Diversidad de comercios.
+
 
 ### Entorno
 **El conjunto de datos**: 100,000 datos, de los cuales 89,936 eran transacciones normales, 3,994 eran de anomalías debido al orden no congruente. 
