@@ -40,6 +40,21 @@ El sistema antifraude del Banco está construido sobre variables agregadas por v
   
   -Diversidad de comercios.
 
+### Datos
+Cada fila del conjunto de datos es una transacción identificada con el ID del cliente.
+Datos de transacciones que incluyen las variables: 
+
+
+  -Fecha 
+
+  
+  -Hora
+
+  
+  -Monto de la transacción 
+
+  
+  -Tipo de negocio ("Supermercado", "Restaurante", "Gasolinera", "Farmacia", "Ropa", "Tecnología", "Entretenimiento", "Transporte", "Otros")
 
 ### Entorno
 **El conjunto de datos**: 100,000 datos, de los cuales 89,936 eran transacciones normales, 3,994 eran de anomalías debido al orden no congruente. 
