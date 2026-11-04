@@ -74,6 +74,7 @@ PROYECTO_4_DL/
 
 ## Cambios del modelo
 
+No se realizarán cambios en el modelo, esto debido a que el modelo ganador del proyecto 1, fue creado específicamente para predecir eficientemente cada tipo de anomalía considerada en los datos sintéticos. El modelo fue considerado exitoso, por lo que no será reentrenado ni se agregarán nuevas componentes (ya que tampoco se agregarán nuevas anomalías).
 
 
 ## Hipótesis

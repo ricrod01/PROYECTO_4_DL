@@ -7,7 +7,7 @@
 | Problemática | Definir el problema, usuario y decisión que depende del modelo | Ian Castellanos | 02/11/2026 | 03/11/2026 | [No iniciado] |
 | Supuestos | Definir los supuestos sobre los cuales trabaja el modelo, el usuario y el entorno |  Ian Castellanos | 03/11/2026 | 04/11/2026 | [No iniciado] |
 | Arquitectura del proyecto | Construcción del repositorio y de la arquitectura que manejará | Ricardo Rodríguez | 02/11/2026 | 03/11/2026 | [Finalizado] |
-| Cambios del modelo | Se justificará el por qué no se realizarán cambios a los modelos | Ricardo Rodríguez | 03/11/2026 | 03/11/2026 | [No iniciado] |
+| Cambios del modelo | Se justificará el por qué no se realizarán cambios a los modelos | Ricardo Rodríguez | 03/11/2026 | 03/11/2026 | [Finalizado] |
 | Hipótesis | Colocar la hipótesis del primer proyecto y realizar cambios de redacción | Ian Castellanos | 03/11/2026 | 04/11/2026 | [No iniciado] |
 | Diagrama del sistema | Realizar un gráfico que represente el flujo del sistema | Ian Castellanos | 05/11/2026 | 06/11/2026 | [No iniciado] |
 | Puesta en producción | Flujo de puesta en producción para que el modelo se reentrene automáticamente | Ricardo Rodríguez | 06/11/2026 | 08/11/2026 | [No iniciado] |
