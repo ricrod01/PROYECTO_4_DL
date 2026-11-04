@@ -25,23 +25,10 @@ Para este proyecto se ha usado como base el modelo C del Proyecto 1 del curso de
 
 
 
-
-### Usuario
-El sistema antifraude del Banco está construido sobre variables agregadas por ventana de tiempo: 
-
-  -Monto promedio de las últimas 24 horas. 
-
-  
-  -Número de transacciones por hora.
-
-  
-  -Monto máximo del día.
-
-  
-  -Diversidad de comercios.
-
 ### Datos
-Cada fila del conjunto de datos es una transacción identificada con el ID del cliente.
+Cada fila del conjunto de datos es una transacción identificada con el ID del cliente. Se tienen clientes con transacciones variables en el año de datos elegido para el modelo, de manera que solo se analizarán los clientes con 30 transacciones; en caso de que haya clientes con un número mayor, se seleccionarán las últimas 30 transacciones.
+
+
 Datos de transacciones que incluyen las variables: 
 
 
@@ -56,12 +43,15 @@ Datos de transacciones que incluyen las variables:
   
   -Tipo de negocio ("Supermercado", "Restaurante", "Gasolinera", "Farmacia", "Ropa", "Tecnología", "Entretenimiento", "Transporte", "Otros")
 
+### Usuario
+El usuario coloca un formato válido de *CSV* al modelo y le coloca las columnas necesarias en el formato de los supuestos de datos descritos anteriormente.
+
 ### Entorno
-**El conjunto de datos**: 100,000 datos, de los cuales 89,936 eran transacciones normales, 3,994 eran de anomalías debido al orden no congruente. 
-3,611 eran de anomalías debido a transacciones cortas (muchas transacciones en poco tiempo) y 2,459 eran anomalías debido a compras en establecimientos no comunes para el cliente.
 
-**Datos de entrenamiento**: las 30 transacciones más recientes de cada cliente. Para cada transacción se contaba con el monto, la fecha y hora y el tipo de establecimiento en el que fue registrada la transacción. 
+-Se tiene la capacidad computacional necesaria para correr el modelo.
 
+
+-Las computadoras generan el ambiente del Docker.
 
 ## Arquitectura del proyecto
 
