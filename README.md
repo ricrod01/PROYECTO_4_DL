@@ -84,7 +84,18 @@ No se realizarán cambios en el modelo, esto debido a que el modelo ganador del 
 
 ## Hipótesis
 
+Creemos que un modelo que implemente:
 
+
+  -Una red CNN-1D para identificar las transacciones cortas.
+
+  
+  -Una red LSTM para identificar aquellas anomalías en el orden de las transacciones.
+
+  
+  -Random Forest que permite identificar las anomalías por tipo de negocio.
+
+mejorará la predicción de las anomalías, debido a que cada sub-modelo estará especializado en un tipo de anomalía porque es más específico y aprende a reconocer los patrones que surgen de las anomalías consideradas.
 
 ## Diagrama del sistema
 
