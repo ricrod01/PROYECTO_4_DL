@@ -62,10 +62,9 @@ PROYECTO_4_DL/
 ├── docs/
 ├── logs/
 ├── mlartifacts/
-├── modelos_base/
+├── mlruns/
 ├── modelos/
-├── reportes/
-├── resultados/
+├── modelos_base/
 ├── notebooks/
 ├── scripts/
 │   └── modelo_c.py
@@ -102,14 +101,19 @@ mejorará la predicción de las anomalías, debido a que cada sub-modelo estará
 ## Diagrama del sistema
 
 
-## Levantar el repositorio
+## Levantar el contenedor
 
+Para construir la imagen del contenedor.
+
+```bash
+docker compose build
+```
 
 ## Actualización del modelo
 
 ### Requisitos
 
-- Python **3.11 de 64 bits** (recomendado).
+- Python **3.13.7 de 64 bits** (recomendado).
 - Ubicar el CSV real en `datos/datos_sinteticos.csv` (separador `;`) o editar `datos.ruta_csv` en `config.json`.
 - Columnas mínimas: `fechas_hora`, `montos`, `tipos_establecimiento`,
 `historico_establecimiento`, `tipo_anomalia`, `es_anomalia`.
@@ -118,10 +122,10 @@ mejorará la predicción de las anomalías, debido a que cada sub-modelo estará
 ### Ejecutar
 
 ```bash
-docker compose build
 docker compose up -d mlflow
 docker compose run --rm entrenamiento
 ```
+
 Interfaz de MLflow: <http://localhost:5000>
 
 Para volver a entrenar, modificar `scripts/config.json` y volver a ejecutar:
@@ -232,3 +236,4 @@ cuando las probabilidades están en [0,1].
 ## Aplicación
 
 
+## Uso de Inteligencia Artificial
