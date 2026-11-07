@@ -1,0 +1,67 @@
+{
+  "datos": {
+    "ruta_csv": "datos/datos_sinteticos.csv",
+    "separador": ";",
+    "fraccion_prueba": 0.20,
+    "fraccion_validacion_del_resto": 0.20
+  },
+  "semilla": 0,
+  "mlflow": {
+    "experimento": "deteccion_fraude_modelo_C",
+    "base_datos": "mlflow.db",
+    "directorio_artefactos": "mlartifacts"
+  },
+  "costo": {
+    "falso_negativo": 4200.0,
+    "falso_positivo": 180.0,
+    "costo_promedio_maximo": 35.0
+  },
+  "umbral_probabilidad": {
+    "modo": "optimizar",
+    "valor_fijo": 0.50
+  },
+  "entrenamiento": {
+    "epocas_maximas": 30,
+    "paciencia_early_stopping": 8,
+    "paciencia_reduccion_lr": 3,
+    "factor_reduccion_lr": 0.50,
+    "learning_rate_minimo": 0.000001,
+    "min_delta": 0.0001,
+    "determinismo_gpu": false
+  },
+  "cnn": {
+    "rejilla": {
+      "filters_1": [32],
+      "filters_2": [64],
+      "dense_units": [32],
+      "dropout_rate": [0.10],
+      "learning_rate": [0.001],
+      "batch_size": [64]
+    }
+  },
+  "lstm": {
+    "rejilla": {
+      "lstm_units_1": [64],
+      "lstm_units_2": [32],
+      "dense_units": [32],
+      "dropout_rate": [0.10],
+      "learning_rate": [0.001],
+      "batch_size": [256]
+    }
+  },
+  "rf": {
+    "cv_pliegues": 5,
+    "n_jobs_grid": 4,
+    "rejilla": {
+      "random_forest__n_estimators": [50, 100],
+      "random_forest__max_depth": [5, 7],
+      "random_forest__min_samples_leaf": [3, 6],
+      "random_forest__max_features": ["sqrt", 0.70],
+      "random_forest__class_weight": ["balanced_subsample"]
+    }
+  },
+  "salida": {
+    "modelos_compatibles": "modelos_base",
+    "modelos_versionados": "modelos"
+  }
+}

@@ -70,6 +70,8 @@ PROYECTO_4_DL/
 ├── scripts/
 │   └── modelo_c.py
 ├── app.py
+├── mlflow.db
+├── PLANIFICACION.md
 ├── README.md
 ├── Dockerfile
 ├── compose.yaml
@@ -104,4 +106,129 @@ mejorará la predicción de las anomalías, debido a que cada sub-modelo estará
 
 
 ## Actualización del modelo
+
+### Requisitos
+
+- Python **3.11 de 64 bits** (recomendado).
+- Ubicar el CSV real en `datos/datos_sinteticos.csv` (separador `;`) o editar `datos.ruta_csv` en `config.json`.
+- Columnas mínimas: `fechas_hora`, `montos`, `tipos_establecimiento`,
+`historico_establecimiento`, `tipo_anomalia`, `es_anomalia`.
+- Cada registro debe tener 30 fechas, 30 montos, 30 establecimientos y un histórico de nueve frecuencias, serializados como listas.
+
+### Ejecutar
+
+```bash
+docker compose build
+docker compose up -d mlflow
+docker compose run --rm entrenamiento
+```
+Interfaz de MLflow: <http://localhost:5000>
+
+Para volver a entrenar, modificar `scripts/config.json` y volver a ejecutar:
+
+```powershell
+docker compose run --rm entrenamiento
+```
+
+Ver registros y detener el servidor:
+
+```powershell
+docker compose logs -f mlflow
+docker compose
+```
+
+### Configuración
+
+- `semilla`: controla las particiones, la inicialización de redes y Random Forest.
+- `cnn.rejilla`: cambia filtros y **unidades de la capa densa**, tasas de aprendizaje,
+  dropout y batch size. Las dos capas Conv1D quedan fijas.
+- `lstm.rejilla`: cambia **nodos de ambas capas LSTM** y de la capa densa. Las dos
+  capas LSTM quedan fijas.
+- `rf.rejilla`: parámetros de `GridSearchCV` de sklearn (con prefijo
+  `random_forest__`). El ejemplo reproduce los valores del notebook original.
+- `entrenamiento`: épocas máximas, EarlyStopping y reducción de learning rate.
+- `umbral_probabilidad.modo`: `optimizar` busca el corte de menor costo sobre
+  validación; `fijo` usa `valor_fijo` entre 0 y 1.
+- `costo.falso_negativo`: Q4,200 y `costo.falso_positivo`: Q180, según el notebook.
+- `costo.costo_promedio_maximo`: **Q15** (valor inicial). La aprobación ocurre si
+  el costo en validación es **menor o igual** a Q15. No significa 15 % ni probabilidad 15.
+
+**Fórmula:** `(FN * 4200 + FP * 180) / N` (quetzales por registro evaluado).
+
+### Separación de datos y selección
+
+1. División estratificada por `tipo_anomalia`: 20 % test, 16 % validación y 64 % train.
+2. Cada submodelo entrena solo contra ejemplos `Normal` y su tipo de anomalía,
+   tal como el notebook original; el preprocesamiento se ajusta exclusivamente a train.
+3. Cada combinación CNN/LSTM genera un **run hijo** en MLflow; se elige la mejor
+   por PR-AUC de validación. La rejilla RF usa 5 pliegues estratificados y PR-AUC.
+4. Se combinan las tres probabilidades con `max`, sin aprender un meta-modelo.
+5. El umbral de decisión se optimiza o fija **usando validación**.
+6. Solo si `(costo_promedio_validacion <= costo_promedio_maximo)`, se guardan los
+   tres modelos y los dos pipelines. **Test no interviene en esta autorización.**
+7. Test se evalúa una única vez con el umbral ya seleccionado para reportar resultados.
+
+> Precaución: al usar una única validación para elegir hiperparámetros y el umbral,
+> puede existir optimismo en la métrica de validación; la medida de generalización
+> es el conjunto de prueba. Con datos reales se recomienda validación temporal/por
+> cliente y una partición de calibración adicional para evitar fuga entre historiales.
+
+### Evidencias guardadas
+
+MLflow persistirá en `mlflow.db` (backend) y `mlartifacts/` (artefactos):
+
+- Run principal por entrenamiento, y runs hijos de cada combinación CNN/LSTM y de RF.
+- Archivo `config.json` original, código fuente, `requirements.txt`, versiones de
+  dependencias, SHA-256 del CSV, tamaño y distribución de los splits.
+- Hiperparámetros, pesos de clase, pérdidas y métricas por época, historiales JSON.
+- Tabla CSV de todas las combinaciones de RF y, para umbral optimizado, tabla CSV
+  de costos por umbral. No se generan gráficos.
+- Métricas PR-AUC, ROC-AUC, precisión, recall, F1, costo total, costo medio y
+  conteos TP/TN/FP/FN en validación y prueba; etiqueta `aprobado` o `rechazado`.
+
+**Si aprueba**, se guardan además:
+
+```text
+modelos/<mlflow_run_id>/
+    modelo_c_cnn.keras
+    modelo_c_lstm.keras
+    pipeline_c_cnn.joblib
+    pipeline_c_lstm.joblib
+    modelo_c_rf.joblib
+    metadata_entrenamiento.json
+```
+
+La misma versión aprobada se publica en `modelos_base/`, manteniendo la compatibilidad
+con `scripts/modelo_c.py`. Los artefactos también aparecen dentro del run en
+`modelos_aprobados/`, y se loguean los modelos nativos de MLflow por separado.
+
+**Si falla la aprobación**, los experimentos y métricas **sí** quedan registrados
+pero **no se crean ni se reemplazan archivos de modelos**.
+
+### Predicción de la versión aprobada
+
+```python
+from scripts.modelo_c import ModeloEnsambladoFraude
+import json
+import pandas as pd
+
+with open("modelos_base/metadata_entrenamiento.json", encoding="utf-8") as f:
+    metadata = json.load(f)
+
+modelo = ModeloEnsambladoFraude(
+    umbral=metadata["umbral_probabilidad"],
+    directorio_modelos="modelos_base",
+)
+datos = pd.read_csv("datos/datos_sinteticos.csv", sep=";")
+resultado = modelo.predict(datos)
+print(resultado[["probabilidad_mayor", "prediccion_final"]].head())
+```
+
+El umbral óptimo puede ser ligeramente mayor que 1.0 si la política de menor
+costo consiste en no emitir ninguna alerta; es un valor de corte interno válido
+cuando las probabilidades están en [0,1].
+
+
+## Aplicación
+
 

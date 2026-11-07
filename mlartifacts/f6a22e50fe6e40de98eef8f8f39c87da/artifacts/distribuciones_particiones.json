@@ -1,0 +1,20 @@
+{
+  "entrenamiento": {
+    "Normal": 57559,
+    "orden_no_congruente": 2556,
+    "transaccion_corta": 2311,
+    "establecimiento_raro": 1574
+  },
+  "validacion": {
+    "Normal": 14390,
+    "orden_no_congruente": 639,
+    "transaccion_corta": 578,
+    "establecimiento_raro": 393
+  },
+  "prueba": {
+    "Normal": 17987,
+    "orden_no_congruente": 799,
+    "transaccion_corta": 722,
+    "establecimiento_raro": 492
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "cnn": {
+    "batch_size": 64,
+    "dense_units": 32,
+    "dropout_rate": 0.1,
+    "filters_1": 32,
+    "filters_2": 64,
+    "learning_rate": 0.001
+  },
+  "lstm": {
+    "batch_size": 256,
+    "dense_units": 32,
+    "dropout_rate": 0.1,
+    "learning_rate": 0.001,
+    "lstm_units_1": 64,
+    "lstm_units_2": 32
+  },
+  "rf": {
+    "random_forest__class_weight": "balanced_subsample",
+    "random_forest__max_depth": 7,
+    "random_forest__max_features": 0.7,
+    "random_forest__min_samples_leaf": 6,
+    "random_forest__n_estimators": 100
+  }
+}

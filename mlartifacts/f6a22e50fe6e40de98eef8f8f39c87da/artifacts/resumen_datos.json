@@ -1,0 +1,12 @@
+{
+  "filas_originales": 100000,
+  "filas_validas": 100000,
+  "filas_descartadas": 0,
+  "conteo_clases": {
+    "Normal": 89936,
+    "orden_no_congruente": 3994,
+    "transaccion_corta": 3611,
+    "establecimiento_raro": 2459
+  },
+  "sha256_csv": "ad10352f365d6110f4d6ef57a2ac26fc7878bbcf28814a734f7c713b428404c9"
+}

@@ -1,0 +1,50 @@
+services:
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: proyecto4-mlflow:py311
+    working_dir: /app
+    # El servidor comparte el MISMO SQLite y directorio de artefactos que entrenar_modelos.py.
+    command:
+      - mlflow
+      - server
+      - --backend-store-uri
+      - sqlite:////app/.mlflow_state/mlflow.db
+      - --default-artifact-root
+      - file:///app/mlartifacts
+      - --host
+      - 0.0.0.0
+      - --port
+      - "5000"
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - ./:/app
+      - estado_mlflow:/app/.mlflow_state
+    restart: unless-stopped
+
+  entrenamiento:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: proyecto4-mlflow:py311
+    working_dir: /app
+    command:
+      - python
+      - -u
+      - scripts/entrenar_modelos.py
+      - --config
+      - scripts/config.json
+    volumes:
+      - ./:/app
+      - estado_mlflow:/app/.mlflow_state
+    depends_on:
+      - mlflow
+    shm_size: 1gb
+    # Entrena solo al invocar expresamente el servicio.
+    profiles:
+      - entrenamiento
+
+volumes:
+  estado_mlflow:

@@ -1,0 +1,50 @@
+{
+  "run_id": "f6a22e50fe6e40de98eef8f8f39c87da",
+  "umbral_probabilidad": 0.3943279737756454,
+  "evaluacion_validacion": {
+    "umbral": 0.3943279737756454,
+    "tp": 1551,
+    "fp": 1458,
+    "fn": 59,
+    "tn": 12932,
+    "n": 16000,
+    "costo_total": 510240.0,
+    "costo_promedio": 31.89
+  },
+  "evaluacion_test": {
+    "umbral": 0.3943279737756454,
+    "tp": 1951,
+    "fp": 1963,
+    "fn": 62,
+    "tn": 16024,
+    "n": 20000,
+    "costo_total": 613740.0,
+    "costo_promedio": 30.687
+  },
+  "sha256_csv": "ad10352f365d6110f4d6ef57a2ac26fc7878bbcf28814a734f7c713b428404c9",
+  "mejores_hiperparametros": {
+    "cnn": {
+      "batch_size": 64,
+      "dense_units": 32,
+      "dropout_rate": 0.1,
+      "filters_1": 32,
+      "filters_2": 64,
+      "learning_rate": 0.001
+    },
+    "lstm": {
+      "batch_size": 256,
+      "dense_units": 32,
+      "dropout_rate": 0.1,
+      "learning_rate": 0.001,
+      "lstm_units_1": 64,
+      "lstm_units_2": 32
+    },
+    "rf": {
+      "random_forest__class_weight": "balanced_subsample",
+      "random_forest__max_depth": 7,
+      "random_forest__max_features": 0.7,
+      "random_forest__min_samples_leaf": 6,
+      "random_forest__n_estimators": 100
+    }
+  }
+}

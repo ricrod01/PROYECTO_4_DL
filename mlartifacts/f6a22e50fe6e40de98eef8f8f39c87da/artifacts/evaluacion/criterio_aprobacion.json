@@ -1,0 +1,14 @@
+{
+  "evaluacion_validacion": {
+    "umbral": 0.3943279737756454,
+    "tp": 1551,
+    "fp": 1458,
+    "fn": 59,
+    "tn": 12932,
+    "n": 16000,
+    "costo_total": 510240.0,
+    "costo_promedio": 31.89
+  },
+  "aprobado": true,
+  "costo_promedio_maximo": 35.0
+}
