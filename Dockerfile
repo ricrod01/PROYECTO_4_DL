@@ -17,7 +17,8 @@ WORKDIR /app
 # Las dependencias se instalan dentro del contenedor, NO en Python de Windows.
 COPY requirements.txt /tmp/requirements.txt
 RUN python -m pip install --upgrade pip \
- && python -m pip install -r /tmp/requirements.txt
+ && python -m pip install -r /tmp/requirements.txt \
+ && python -m pip install "streamlit>=1.40,<2.0" "plotly>=5.24,<7.0"
 
 # El código y datos se montan con Docker Compose para persistir los resultados.
 CMD ["python", "scripts/entrenar_modelos.py", "--config", "scripts/config.json"]

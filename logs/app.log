@@ -1,0 +1,229 @@
+2026-11-07 19:32:23,583 | INFO | evento=transformacion_ok sesion=41f88f256f5f transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:32:23,886 | ERROR | evento=inferencia_error sesion=41f88f256f5f
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 188, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 142, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 90, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("scripts.modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-07 19:37:29,998 | INFO | evento=transformacion_ok sesion=5b71feeee762 transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:37:30,198 | ERROR | evento=inferencia_error sesion=5b71feeee762
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 194, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 148, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 96, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-07 19:38:30,663 | INFO | evento=transformacion_ok sesion=a8f171fbfaec transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:38:30,806 | ERROR | evento=inferencia_error sesion=a8f171fbfaec
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 194, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 148, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 96, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-07 19:47:14,814 | INFO | evento=transformacion_ok sesion=bae2071a73dd transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:47:14,996 | ERROR | evento=inferencia_error sesion=bae2071a73dd
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 194, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 148, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 96, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-07 19:49:06,622 | INFO | evento=transformacion_ok sesion=d8cd30108627 transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:49:06,760 | ERROR | evento=inferencia_error sesion=d8cd30108627
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 190, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 144, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 94, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-07 19:55:29,767 | INFO | evento=transformacion_ok sesion=cff169955b9a transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 19:55:29,907 | ERROR | evento=inferencia_error sesion=cff169955b9a
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 190, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 144, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 94, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-08 01:56:35,593 | INFO | evento=transformacion_ok sesion=10b3bbf3a0a9 transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 01:56:39,332 | INFO | evento=inferencia_ok sesion=10b3bbf3a0a9 clientes=6 alertas=1 tiempo_total_s=3.773
+2026-11-07 20:01:04,739 | INFO | evento=transformacion_ok sesion=def3ffc2e05c transacciones=319 cumplen=6 no_cumplen=4
+2026-11-07 20:01:04,902 | ERROR | evento=inferencia_error sesion=def3ffc2e05c
+Traceback (most recent call last):
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 190, in analizar_archivo
+    tabla, umbral = inferir_clientes(resultado["cumplen"])
+                    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 144, in inferir_clientes
+    modelo, umbral, bloqueo = obtener_modelo_aprobado()
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 728, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 784, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\site-packages\streamlit\runtime\caching\cache_utils.py", line 846, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\app.py", line 94, in obtener_modelo_aprobado
+    modulo_modelo = importlib.import_module("modelo_c")
+  File "C:\Users\ricro\AppData\Local\Programs\Python\Python314\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1398, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 762, in exec_module
+  File "<frozen importlib._bootstrap>", line 491, in _call_with_frames_removed
+  File "C:\Users\ricro\OneDrive\Desktop\Carrera Mate\6to Semestre\DEEP LEARNING\PROYECTO_4\PROYECTO_4_DL\scripts\modelo_c.py", line 4, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'
+2026-11-08 02:02:01,239 | INFO | evento=transformacion_ok sesion=229a8b4ffcbf transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 02:02:01,493 | INFO | evento=inferencia_ok sesion=229a8b4ffcbf clientes=6 alertas=1 tiempo_total_s=0.281
+2026-11-08 02:04:41,562 | INFO | evento=transformacion_ok sesion=783391c9c28a transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 02:04:41,802 | INFO | evento=inferencia_ok sesion=783391c9c28a clientes=6 alertas=1 tiempo_total_s=0.258
+2026-11-08 02:09:31,120 | INFO | evento=transformacion_ok sesion=a57724116ae8 transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 02:09:55,162 | INFO | evento=inferencia_ok sesion=a57724116ae8 clientes=6 alertas=1 tiempo_total_s=5.868
+2026-11-08 02:20:56,293 | INFO | evento=transformacion_ok sesion=f2e71b49a94a transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 02:20:56,517 | INFO | evento=inferencia_ok sesion=f2e71b49a94a clientes=6 alertas=1 tiempo_total_s=0.245
+2026-11-08 03:07:03,080 | INFO | evento=transformacion_ok sesion=860c839101bf transacciones=319 cumplen=6 no_cumplen=4
+2026-11-08 03:07:03,430 | INFO | evento=inferencia_ok sesion=860c839101bf clientes=6 alertas=1 tiempo_total_s=0.393

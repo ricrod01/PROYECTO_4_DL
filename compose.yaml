@@ -45,6 +45,24 @@ services:
     # Entrena solo al invocar expresamente el servicio.
     profiles:
       - entrenamiento
+      
+  aplicacion:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    command:
+      - streamlit
+      - run
+      - app.py
+      - --server.address=0.0.0.0
+      - --server.port=8501
+      - --server.headless=true
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/app
+    restart: unless-stopped
 
 volumes:
   estado_mlflow:

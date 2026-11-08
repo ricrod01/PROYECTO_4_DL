@@ -62,7 +62,6 @@ PROYECTO_4_DL/
 ├── docs/
 ├── logs/
 ├── mlartifacts/
-├── mlruns/
 ├── modelos/
 ├── modelos_base/
 ├── notebooks/
@@ -234,6 +233,15 @@ cuando las probabilidades están en [0,1].
 
 
 ## Aplicación
+
+Desde la raíz del repositorio:
+
+```bash
+docker compose up -d aplicacion
+Start-Process "http://localhost:8501"
+```
+
+Abrir <http://localhost:8501>.
 
 
 ## Uso de Inteligencia Artificial
