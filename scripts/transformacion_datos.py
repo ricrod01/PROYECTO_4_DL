@@ -48,7 +48,7 @@ def cargar_transacciones(ruta_entrada):
         raise ValueError("La columna 'cliente_id' debe contener enteros positivos.")
     datos["cliente_id"] = ids.astype("int64")
 
-    datos["fecha_hora"] = pd.to_datetime(datos["fecha_hora"], format="%d/%m/%Y %H:%M", errors="raise")
+    datos["fecha_hora"] = pd.to_datetime(datos["fecha_hora"], format= "%Y-%m-%d %H:%M:%S", errors="raise")
     datos["monto"] = pd.to_numeric(datos["monto"], errors="raise")
     if not np.isfinite(datos["monto"]).all():
         raise ValueError("La columna 'monto' debe contener valores numéricos finitos.")
