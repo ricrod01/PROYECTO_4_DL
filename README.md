@@ -243,5 +243,24 @@ Start-Process "http://localhost:8501"
 
 Abrir <http://localhost:8501>.
 
+Si se desea abrir en línea:
+Abror <https://proyecto4dl-lxeuudguyfpka8dpapymw2.streamlit.app>
+
 
 ## Uso de Inteligencia Artificial
+
+## Declaración del uso de Inteligencia Artificial
+
+Durante el desarrollo del proyecto **Monitor de Anomalías en Transacciones**, se utilizaron herramientas de Inteligencia Artificial (IA) generativa como apoyo en distintas etapas de programación, implementación y despliegue de la solución.
+
+El uso de IA se concentró principalmente en las siguientes actividades:
+
+1. **Generación y transformación de datos:** apoyo en la elaboración de código Python para generar datos, realizar procesos de limpieza, transformación y preparación de la información utilizada en el proyecto.
+
+2. **Flujo de entrenamiento de modelos:** asistencia en la estructuración y programación del flujo de entrenamiento, incluyendo el preprocesamiento de datos, la configuración de modelos de aprendizaje automático y aprendizaje profundo, así como los procedimientos de entrenamiento y evaluación.
+
+3. **Desarrollo del tablero interactivo:** apoyo en la implementación de la aplicación web mediante Streamlit, incluyendo la construcción de componentes visuales, la carga de archivos, la presentación de resultados y la integración de los modelos predictivos.
+
+4. **Contenerización de la aplicación:** asistencia en la configuración de Docker, mediante la creación y adaptación de los archivos necesarios para empaquetar la aplicación, gestionar sus dependencias y facilitar su ejecución en un entorno reproducible.
+
+La Inteligencia Artificial se utilizó como una **herramienta de asistencia técnica para la generación, revisión y optimización de código**. Su participación contribuyó a agilizar el desarrollo y la resolución de problemas de implementación.
